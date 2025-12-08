@@ -26,6 +26,15 @@ resource "azurerm_virtual_network" "vnet--east-us" {
   resource_group_name = azurerm_resource_group.rg.name-east-us
 }
 
+#JIRA-202-Vnet-East-Us added
+resource "azurerm_virtual_network" "vnet---south--us3" {
+  name                = "${var.prefix}-vnet---south--us3"
+  address_space       = ["10.0.50.3/32"]
+  location           = azurerm_resource_group.rg.location-vnet---south--us3
+  resource_group_name = azurerm_resource_group.rg.name-vnet---south--us3
+
+}
+
 #JIRA-201-Vnet-East-Us added by sanjay
 resource "azurerm_virtual_network" "vnet---noth-us1" {
   name                = "${var.prefix}-vnet---noth-us1"
